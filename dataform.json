@@ -1,6 +1,6 @@
 {
     "warehouse": "bigquery",
-    "defaultSchema": "dataform",
-    "assertionSchema": "dataform_assertions",
+    "defaultSchema": "staging",
+    "assertionSchema": "assertions",
     "defaultDatabase": "planar-sunrise-316117"
 }

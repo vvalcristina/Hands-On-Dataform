@@ -1,0 +1,50 @@
+config {
+  type: "test",
+  dataset: "vw_01_select_columns"
+}
+input "properties_sell_201801" {
+select
+  "82065cd175ea8f6ab2e811b849e9c56cb30c0a31" as id,
+  2017-09-10 as created_on,
+  "sell" as operation,
+  "house" as property_type,
+  "Bahia" as place_name,
+  "|Brasil|Bahia|" as place_with_parent_names,
+  "Brasil" as country_name,
+  "Bahia" as state_name,
+  null as geonames_id,
+  "" as lat_lon,
+  null as lat,
+  null as lon,
+  1000000 as price,
+  "BRL" as currency,
+  992299.85 as price_aprox_local_currency,
+  299616.49 as price_aprox_usd,
+  null as surface_total_in_m2,
+  400 as surface_covered_in_m2,
+  749.0412249999999 as price_usd_per_m2,
+  2500 as price_per_m2,
+  null as floor,
+  2 as rooms,
+  "https://www.properati.com.br/38aj4_venda_casa_bahia_churrasqueira_piscina_comodidades_itaigara-imoveis" as properati_url,
+  "Excelente casa, ótima localização, condômino completa área de lazer. casa com piscina, suite, churrasqueira. Oportunidade, agende uma visita" as description,
+  "Casa residencial à venda, Vila de Abrantes, Abrantes (Camaçari)." as title
+}
+select
+  "82065cd175ea8f6ab2e811b849e9c56cb30c0a31" as id,
+  201801 as date_ref,
+  2017-09-10 as created_on,
+  "sell" as operation,
+  "house" as property_type,
+  "Bahia" as place_name,
+  "Brasil" as country_name,
+  "Bahia" as state_name,
+  1000000 as price,
+  "BRL" as currency,
+  992299.85 as price_aprox_local_currency,
+  2500 as price_per_m2,
+  null as floor,
+  2 as rooms,
+  "https://www.properati.com.br/38aj4_venda_casa_bahia_churrasqueira_piscina_comodidades_itaigara-imoveis" as properati_url,
+  "Excelente casa, ótima localização, condômino completa área de lazer. casa com piscina, suite, churrasqueira. Oportunidade, agende uma visita" as description,
+  "Casa residencial à venda, Vila de Abrantes, Abrantes (Camaçari)." as title
