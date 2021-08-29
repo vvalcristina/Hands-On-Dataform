@@ -30,6 +30,6 @@ jobs:
         env:
           CREDENTIALS_GPG_PASSPHRASE: ${{ secrets.CREDENTIALS_GPG_PASSPHRASE }}
       - name: Execute dataform run
-        uses: docker://dataformco/dataform:1.6.11
+        uses: docker://dataformco/dataform:1.19.0
         with:
           args: run
