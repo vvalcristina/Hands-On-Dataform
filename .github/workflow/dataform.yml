@@ -1,0 +1,35 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - master
+      - develop
+  pull_request:
+    branches:
+      - master
+      - develop
+
+jobs:
+  compile:
+    runs-on: ubuntu-latest
+    if: "contains(github.event.head_commit.message, 'to deploy')"
+    steps:
+      - name: Checkout code into workspace directory
+        uses: actions/checkout@v2
+      - name: Install project dependencies
+        uses: docker://dataformco/dataform:latest
+        with:
+          args: install
+      - name: Run dataform compile
+        uses: docker://dataformco/dataform:latest
+        with:
+          args: compile
+      - name: Decrypt dataform credentials
+        run: gpg --quiet --batch --yes --decrypt --passphrase="$CREDENTIALS_GPG_PASSPHRASE" --output .df-credentials.json .df-credentials.json.gpg
+        env:
+          CREDENTIALS_GPG_PASSPHRASE: ${{ secrets.CREDENTIALS_GPG_PASSPHRASE }}
+      - name: Execute dataform run
+        uses: docker://dataformco/dataform:1.6.11
+        with:
+          args: run
