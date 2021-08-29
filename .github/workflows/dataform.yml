@@ -25,11 +25,4 @@ jobs:
         uses: docker://dataformco/dataform:latest
         with:
           args: compile
-      - name: Dataform run
-        run: run --run-tests=true --credentials $CREDENTIALS_GPG_PASSPHRASE
-        env:
-          CREDENTIALS_GPG_PASSPHRASE: ${{ secrets.CREDENTIALS_GPG_PASSPHRASE }}
-      - name: Execute dataform run
-        uses: docker://dataformco/dataform:1.19.0
-        with:
-          args: run
+
