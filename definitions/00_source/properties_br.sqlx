@@ -1,0 +1,6 @@
+config {
+  type: "declaration",
+  schema: "properties_br",
+  name: "properties_sell_201801",
+  database: "properati-data-public"
+}

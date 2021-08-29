@@ -1,0 +1,26 @@
+config {
+  type: "view",
+  schema: "staging",
+  description: "View que seleciona as colunas necessarias no dataset"
+}
+
+select 
+  id,
+  201801 as date_ref,
+  created_on,
+  operation,
+  property_type,
+  place_name,
+  country_name,
+  state_name,
+  price,
+  currency,
+  price_aprox_local_currency,
+  price_per_m2,
+  floor,
+  rooms,
+  properati_url,
+  description,
+  title
+from 
+${ref("properties_sell_201801")}
