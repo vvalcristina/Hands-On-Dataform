@@ -26,7 +26,7 @@ jobs:
         with:
           args: compile
       - name: Dataform run
-        run: dataform run --run-tests=true --credentials $CREDENTIALS_GPG_PASSPHRASE
+        run: run --run-tests=true --credentials $CREDENTIALS_GPG_PASSPHRASE
         env:
           CREDENTIALS_GPG_PASSPHRASE: ${{ secrets.CREDENTIALS_GPG_PASSPHRASE }}
       - name: Execute dataform run
